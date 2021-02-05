@@ -1,0 +1,17 @@
+{
+  "name": "hmonattg/328/pets3",
+  "authors": [
+    {
+    "name":"Ruslan Bessarab",
+    "email": "rbessarab@mail.greenriver.edu"
+    },
+    {
+      "name":"Heather Monatt",
+      "email": "hmonatt@mail.greenriver.edu"
+    }
+
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
