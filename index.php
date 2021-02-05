@@ -24,10 +24,25 @@ $f3->route('GET /', function(){
 });
 
 //order route
-$f3->route('GET /order', function(){
+$f3->route('GET|POST /order', function($f3){
+    //Check if the form has been posted
+    //if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+        //Validate the data
+        //if(empty($_POST['typeOfPet'])){
+        //  ...
+       // }else{
+       //     ...
+       // }
+   // }
+
+    $colors = getColors();
+    $f3->set('colors', $colors);
+
     //echo "Order Page";
     $view = new Template();
     echo $view->render('views/pet-order.html');
+
 });
 
 //order2 route

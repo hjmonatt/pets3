@@ -15,11 +15,19 @@
         <input type="text" id="typeOfPet" name="typeOfPet"><br><br>
 
         <label for="colors">Select a Color:</label>
-        <select name="colors" id="colors">
+        <select class="form-control" name="colors" id="colors">
+            <option>--Select a color--</option>
+            <repeat group="{{ @colors }}" value="{{ @colorOption }}">
+                <option>{{ @colorOption }}</option>
+            </repeat>
+        </select>
+
+            <!-- Older Code
             <option value="purple">Purple</option>
             <option value="red">Red</option>
             <option value="blue">Blue</option>
-        </select>
+            -->
+
         <br><br>
         <input type="submit" value="Place Order">
     </form>
