@@ -9,6 +9,7 @@ session_start();
 
 //require the autoload file
 require_once('vendor/autoload.php');
+require_once('model/data-layer.php');
 
 //create an instance of the base class
 $f3 = Base::instance();
