@@ -46,7 +46,10 @@ $f3->route('GET|POST /order', function($f3){
 });
 
 //order2 route
-$f3->route('POST /order2', function(){
+$f3->route('POST /order2', function($f3){
+    $f3->set('sizes', getSizes());
+    $f3->set('accessories', getAccessories());
+
     //echo "Order Page 2";
     //var_dump($_POST);
     //add data from order page to session array
@@ -70,8 +73,16 @@ $f3->route('POST /order3', function(){
         $_SESSION['petName'] = $_POST['petName'];
     }
 
-    if(isset($_POST['accessory'])){
+    /**if(isset($_POST['accessory'])){
         $_SESSION['accessory'] = $_POST['accessory'];
+    }*/
+
+    if(isset($_POST['size'])) {
+        $_SESSION['size'] = $_POST['size'];
+    }
+
+    if(isset($_POST['accessories[]'])) {
+        $_SESSION['accessories'] = $_POST['accessories[]'];
     }
 
     //display a view

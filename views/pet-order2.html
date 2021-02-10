@@ -18,8 +18,27 @@
             </label>
         </div>
         <br>
+        <h4>Choose the size please:</h4>
+        <repeat group="{{ @sizes }}" value="{{ @size }}">
+            <label>
+                <input type="radio"
+                name="size"
+                id="{{ @size }}"
+                value="{{ @size }}"> {{ ucfirst(@size) }}
+            </label><br>
+        </repeat>
+        <h4>Choose the accessories:</h4>
+        <repeat group="{{ @accessories }}" value="{{ @accessory }}">
+            <label>
+                <input type="checkbox"
+                name="accessories[]"
+                id="{{ @accessory }}"
+                value="{{ @accessory }}"> {{ ucfirst(@accessory) }}
+            </label><br>
+        </repeat>
+
+        <br>
         <input type="submit" value="Place Order">
     </form>
-
 </body>
 </html>
