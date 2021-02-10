@@ -66,23 +66,23 @@ $f3->route('POST /order2', function($f3){
 });
 
 //order3 route
-$f3->route('POST /order3', function(){
+$f3->route('POST|GET /order3', function(){
 
     //add data from form 2 to session array
     if(isset($_POST['petName'])){
         $_SESSION['petName'] = $_POST['petName'];
     }
 
-    /**if(isset($_POST['accessory'])){
+    if(isset($_POST['accessory'])){
         $_SESSION['accessory'] = $_POST['accessory'];
-    }*/
+    }
 
     if(isset($_POST['size'])) {
         $_SESSION['size'] = $_POST['size'];
     }
 
-    if(isset($_POST['accessories[]'])) {
-        $_SESSION['accessories'] = $_POST['accessories[]'];
+    if(isset($_POST['accessories'])) {
+        $_SESSION['accessories'] = implode(", ", $_POST['accessories']);
     }
 
     //display a view
